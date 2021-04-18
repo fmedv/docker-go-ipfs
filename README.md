@@ -8,7 +8,7 @@ ___
 [GitHub Repository](https://github.com/ipfs/go-ipfs)
 
 ## Setup
-1. Run `git clone https://github.com/fmedv/docker-ipfs`.
+1. Run `git clone https://github.com/fmedv/docker-go-ipfs.git`.
 1. Rename `.env-example` to `.env`.
 1. Run `docker-compose pull`.
 1. Run `docker-compose up -d`.
