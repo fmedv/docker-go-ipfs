@@ -7,6 +7,10 @@ ___
 
 [GitHub Repository](https://github.com/ipfs/go-ipfs)
 
+## Setup pre-configuration
+1. Run `wsl --user root` in PowerShell/CMD if system runs on WSL.
+1. Run `sysctl -w net.core.rmem_max=2500000` to fix [buffer size issue](https://github.com/fmedv/docker-go-ipfs/issues/2)
+
 ## Setup
 1. Run `git clone https://github.com/fmedv/docker-go-ipfs.git`.
 1. Rename `.env-example` to `.env`.
