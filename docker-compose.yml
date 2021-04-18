@@ -1,0 +1,25 @@
+version: '3.9' 
+services:
+    # IPFS App
+    app:
+        image: ipfs/go-ipfs:latest
+        restart: unless-stopped
+        ports:
+            - "${IPFS_HTTP_PORT:-8080}:8080"
+            - "${IPFS_SWARM_PORT:-4001}:4001"
+            - "${IPFS_API_PORT:-5001}:5001"
+        environment:
+            IPFS_PROFILE: server
+            IPFS_PATH: ${IPFS_DATA_DIR}
+            IPFS_FILE_PATH: ${IPFS_STAGING_DIR}
+        volumes:
+            - ./scripts:${APP_SCRIPTS_DIR}
+            - ./data:${IPFS_DATA_DIR}
+            - ./staging:${IPFS_STAGING_DIR}
+        networks:
+            - ipfs
+
+# Docker Networks
+networks:
+    ipfs:
+        driver: bridge
